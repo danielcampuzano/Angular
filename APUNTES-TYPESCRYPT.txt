@@ -1,0 +1,99 @@
+********************JAVASCRIPT
+
+- Ha ido creciendo y siendo mas demandado con el tiempo ( Ahora hasta backend )
+- No fue diseñado para crear aplicaciones de mediana a gran escala
+
+- Surgieron frameworks -> Angular, react, view
+
+- Js es de tipado débil y en apps muy grandes puede ser algo complejo
+
+- Antes de ES6 carecía de clases y módulos
+
+- ES5 está siendo aceptado mundialmente
+
+*******************TYPESCRIPT
+
+Es similar a programar en un lenguaje más común de programación
+- TYPESCRIPT es un superconjunto de javascript (Superset)
+- Código más ordenado y comprensivo
+
+-- Función autoinvocada es la base para los módulos en javascript, para que no quede en el global y no se choque o colapse el código
+
+--> Esto de abajo se llama el patrón módulo
+
+(function(){
+
+})();
+
+*****************TODO LO QUE SIGUE ACÄ ANGULAR YA LO HACE PERO VALE APRENDERLO
+
+En consola: tsc --init
+
+******Esto crea el archivo de configuración de typescript --> tsconfig.json --> Aquí decimos como queremos que compile o como queremos que trabaje typescript
+
+--> Ya con el archivo se puede usar tsc --watch y lo compila a javascript
+
+************************LET Y CONST******************************************
+-->LET y const son del estándar ES6
+
+--Un estándar mas atrás (ES5)
+
+var mensaje = 'Hola';
+console.log(mensaje));
+
+-- Estándar mas actual puedo usar let donde usaba var
+
+let -> Estas variables existen dentro del scope {}  --> Es mas eficiente que usar var --> Con let tengo un scope mas específico {}
+
+const -> Si nunca va a cambiar en el programa, pesan menos porque no tienen funciones para modificarlas.
+
+**************************TIPOS DE DATOS EN TYPESCRIPT*****************************************************
+let cualquiercosa; --> Queda de tipo any que es un tipo de dato que soporta cualquier cosa. --> Deberíamos evitarlo.
+
+let nombre: string = 'Daniel';
+
+******************************TEMPLATE LITERALES ES6******************************************************************
+-> Puedo llamar una función o lo que quiera dentro de {}
+
+    const salida = `
+        ${ nombre }
+        ${ apellido }
+        ( ${ getEdad() } )`;
+    // Fernando Herrera (Edad: 33)
+	
+	
+*****************************FUNCIONES DE FLECHA ES6********************************************************************
+La funciones de flecha no modifican a lo que apunta THIS -> ES MUY IMPORTANTE.
+
+*****************************DESESTRUCTURACION DE OBJETOS Y ARREGLOS****************************************************
+PUEDO EXTRAER LAS PROPIEDADES QUE ME INTERESAN DE UN OBJETO Y ARREGLO Y CREAR VARIABLES INMEDIATAMENTE.
+
+*****************************PROMESAS***********************************************************************************
+Ejecutar un código sin bloquear el código de mi aplicación.
+Son propias del ES6 por lo cual para ser pasadas el ES5 requerirían de otras librerías como angular polyfills, entre otras.
+
+Dentro de la promesa debo definir una función de flecha que recibe dos argumentos (dos funciones) -> resolver, reject.
+--> El no manejar errores en las promesas puede llevar a que se detenga el programa.
+--> Con el .then se inicia la ejecución de la promesa que se puede pensar como una función asincrona.
+
+*****************************************INTERFACES TYPESCRIT******************************************************************
+Las uso con el fin de tipar objetos -> En js es como un tipo de dato.
+
+--> No tienen equivalencia en javascript --> Si tengo mil interfaces cuando lleve a Js voy a tener cero lineas
+
+Son reglas o contratos si quiero tipar datos.
+
+*******************************************CLASES DE LA POO********************************************************************
+Es una abstracción de un objeto de la vida real.
+
+***En Js el prototype es como la herencia o el ADN del objeto
+
+*******************En TS con solo el constructor y ponerle public ya no necesito crear la propiedad a nivel de clase.
+
+*******************IMPORTACIONES****************************************************************************
+
+A la clase ponerle export class
+
+***********************************DECORADORES DE CLASES****************************************************
+Me permite añadirle o ejecutar cosas de la clase --> Añadirle funcionalidades a la clase
+

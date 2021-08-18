@@ -1,0 +1,73 @@
+********************************ANGULAR****************************************
+
+ANGULAR es el framework
+
+-> En el inicio de los tiempos Angular JS 1.7
+-> Desde la 2 el cambio fue mucho y sigue evolucionando hasta la 8, 9, 10
+
+-> Versionamiento semántico 7.0.2  --> (2 parches o corrección de error, retro compatibles) (0 actualización menor, agrega funciones, retrocompatible) (7 nueva version y puede ser o no retrocompatible)
+
+-> Cada 6 meses el equipo de Angular libera una versión mayor.
+
+****************INTRO ANGULAR*************************************
+
+--> Framework --> Marco de trabajo estandarizado --> Practicas comunes
+--> Generalmente tiene todo lo que necesitas para trabajar
+--> Es modular --> Cada módulo tiene un objetivo específico
+--> Google es quien mantiene el framework
+
+****************************BLOQUES FUNDAMENTALES*********************************
+
+Componentes -> HTML + clase TS --> Usualmente componente HTML llama a un servicio
+Servicios   -> Son singleton bastante fuertes que te permiten centralizar info --> No necesariamente Redux aunque sería bueno saber que es
+Directivas  -> De componentes(directiva con un HTML incluido), estructurales(modificar DOM) y de atributos(apariencia atributos componentes ..)
+Rutas	    -> Componentes que puedo mostrar basado en la URL
+Módulos     -> Permiten agrupar todo lo anterior --> Módulo autenticación, módulo productos, módulo clientes --> YA EXISTEN UNOS Q PUEDEN REUTILIZARSE
+
+*****************************INICIANDO*************************************
+ng new my-app
+ng serve -o
+
+*********************************DIRECTORIOS*******************************************************
+-> Usualmente un .json es un archivo de configuración
+
+*tslint.json -> Linter basado para typescript -> Reglas de como codificar en ts
+*tscongif.json -> Archivo de configuración de typescript -> A cual javascript traspilar, etc.
+*tsconfig.spec.json -> .spec es relacionado a prueebas --> unitarias o de integración
+*package-lock.json -> Como se construyeron los módulos del proyecto
+*karma.conf.js -> Pruebas unitarias y de integración basadas en karma
+**tsconfig.app.json -> Enfocado propiamente en la app -> Está el output directory
+**package.json -> MUY IMPORTANTE -> No debería ser modificado manualmente -> Generalmente añadir un nuevo paquete se hace por consola
+
+***angular.json -> Configuraciones importante para nuestra app -> Assets, styles
+***src -> Carpeta muy importante
+***node_modules --> módulos de node, unos irán a pdn y otros no, etc.
+***e2e -> Carpeta de end to end testing
+
+***************************************CONTENIDO DE EL DIRECTORIO SRC*********************************************************************
+*app -> Adentro estan los archivos del componente app, usualmente punto inicial de la misma
+- app.component.html
+- app.compinent.ts
+- app.component.css
+----app.module.ts -> *IMPORTANTE* -> Agrupador de los módulos de mi aplicación
+
+*assets -> Recursos estáticos de la app
+*environments -> Separar dllo de pdn por ej.
+*index.html -> Página principal de la app, se agregan módulos
+*main.ts -> Dice el target de la app
+*pollyfils -> Compatibilidad con otros navegadores web
+*styles.css -> Hoja de estilos global
+
+************************COMPONENTES***********************************
+No basta sólo con crearlo y usar el selector -> También hay que agregarlo al app.module en declarations para que pueda ser renderizado.
+
+*****MODULOS
+Es recomendable hacer separaciones por módulos, ejemmplo crear un directorio llamado contador y generalmente
+dentro de este habrá un archivo que se llame contador.module.ts
+****Cuando se crea un componente este debe ser importado dentro de un módulo***
+
+************************ONE WAY DATABINDING************************************************
+Si una propiedad cambia en el .ts se va a redibujar en el HTML  --> ES EL RECOMENDABLE ( Se puede hacer two way también con input )
+
+**********GENERAR COMPONENTE DE FORMA AUTOMÁTICA******************************
+ng g component heroes/listado
