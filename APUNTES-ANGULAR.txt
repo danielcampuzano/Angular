@@ -71,3 +71,4 @@ Si una propiedad cambia en el .ts se va a redibujar en el HTML  --> ES EL RECOME
 
 **********GENERAR COMPONENTE DE FORMA AUTOMÁTICA******************************
 ng g component heroes/listado
+
